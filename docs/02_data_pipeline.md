@@ -49,7 +49,7 @@ Pola navigasi web ini muncul ribuan kali di corpus → model belajar untuk loop.
 - DFD-1: 4.5B tokens (banyak noise)
 - IDK-1: target **2-3B tokens bersih** > 4.5B tokens kotor
 
-Quality >> Quantity untuk LLM kecil.
+Quality >> Quantity untuk SLM.
 
 ---
 
