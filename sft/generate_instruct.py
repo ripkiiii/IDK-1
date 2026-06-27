@@ -1,13 +1,14 @@
+import os
 import json
 import time
 import random
 from openai import OpenAI
 
-API_KEY = "997733b646dd4a388c67def87ad0758d.jfOBGQDCWd8uwGgX"
+API_KEY = os.environ.get("GLM_API_KEY", "")
 BASE_URL = "https://open.bigmodel.cn/api/paas/v4"
 MODEL = "glm-4.7-flash"
 OUTPUT_FILE = "idk1_instruct_1k.jsonl"
-TARGET_PAIRS = 200
+TARGET_PAIRS = 500
 PAIRS_PER_CALL = 10
 
 client = OpenAI(api_key=API_KEY, base_url=BASE_URL)
@@ -23,6 +24,11 @@ TOPICS = [
     "coding dan pemrograman (Python, JavaScript, konsep dasar)",
     "bisnis dan kewirausahaan (tips usaha, pemasaran, manajemen)",
     "kreativitas (puisi pendek, cerita singkat, brainstorming ide)",
+    "tanya jawab faktual Indonesia (presiden, ibu kota, pahlawan, tanggal penting, produk lokal)",
+    "rangkuman dan summarisasi (artikel berita, teks panjang, laporan)",
+    "penjelasan konsep sederhana (jelaskan X seperti ke anak SD atau pemula)",
+    "percakapan sehari-hari dan etiket (cara minta tolong, ucapan terima kasih, basa-basi formal)",
+    "tips dan rekomendasi praktis (produktivitas, belajar, organisasi waktu)",
 ]
 
 SYSTEM_PROMPT = """Kamu adalah generator dataset instruksi Bahasa Indonesia berkualitas tinggi.
